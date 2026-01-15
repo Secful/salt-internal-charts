@@ -5,8 +5,7 @@ namespaceOverride: ""
 
 # These labels will be added on all resources, and you can add additional labels from below on individual resource
 additionalLabels:
-  group: com.stakater.platform
-  team: stakater
+  team: salt
 
 deployment:
   dnsConfig:
@@ -540,7 +539,7 @@ autoscaling:
 # autoscaling is used for vertical pod autoscaling
 vpa:
 # enabled is a boolean flag for enabling or disabling vpa
-  enabled: true
+  enabled: false
 # additionalLabels defines additional labels
   additionalLabels:
     # key: value
