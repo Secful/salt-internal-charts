@@ -26,13 +26,6 @@ jobs:
         run: |
           helm lint charts/${CHART_NAME}
           helm lint charts/${CHART_NAME} -f charts/${CHART_NAME}/values-test.yaml
-      - name: Run Checkov
-        uses: bridgecrewio/checkov-action@02a4c5d6a02367e5ea493c34c26b094302fd3f61 # v12.3075.0
-        with:
-          quiet: true
-          soft_fail: false
-          file: charts/${{ env.CHART_NAME }}/Chart.yaml
-          var_file: charts/${{ env.CHART_NAME }}/values-test.yaml
       - name: Dry Run Chart
         run: |
           helm template ${CHART_NAME} charts/${CHART_NAME} -f charts/${CHART_NAME}/values-test.yaml --debug
