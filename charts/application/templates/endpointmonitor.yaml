@@ -1,6 +1,6 @@
-{{- if and (.Values.endpointMonitor).enabled (.Capabilities.APIVersions.Has "endpointmonitor.stakater.com/v1alpha1") (or (and .Values.route .Values.route.enabled) (and .Values.ingress .Values.ingress.enabled))}}
+{{- if and (.Values.endpointMonitor).enabled (.Capabilities.APIVersions.Has "endpointmonitor.salt.com/v1alpha1") (or (and .Values.route .Values.route.enabled) (and .Values.ingress .Values.ingress.enabled))}}
 ---
-apiVersion: endpointmonitor.stakater.com/v1alpha1
+apiVersion: endpointmonitor.salt.com/v1alpha1
 kind: EndpointMonitor
 metadata:
   name: {{ template "application.name" . }}

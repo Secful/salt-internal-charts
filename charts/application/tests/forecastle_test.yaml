@@ -36,7 +36,7 @@ tests:
         enabled: false
     capabilities:
       apiVersions:
-        - forecastle.stakater.com/v1alpha1
+        - forecastle.salt.com/v1alpha1
     asserts:
       - hasDocuments:
           count: 0
@@ -54,7 +54,7 @@ tests:
         enabled: true
     capabilities:
       apiVersions:
-        - forecastle.stakater.com/v1alpha1
+        - forecastle.salt.com/v1alpha1
     asserts:
       - hasDocuments:
           count: 1
@@ -75,7 +75,7 @@ tests:
         enabled: true
     capabilities:
       apiVersions:
-        - forecastle.stakater.com/v1alpha1
+        - forecastle.salt.com/v1alpha1
     asserts:
       - equal:
           path: metadata.name
@@ -95,7 +95,7 @@ tests:
         enabled: true
     capabilities:
       apiVersions:
-        - forecastle.stakater.com/v1alpha1
+        - forecastle.salt.com/v1alpha1
     asserts:
       - equal:
           path: metadata.namespace
@@ -110,7 +110,7 @@ tests:
       namespaceOverride: "app-namespace" 
     capabilities:
       apiVersions:
-        - forecastle.stakater.com/v1alpha1
+        - forecastle.salt.com/v1alpha1
     asserts:
       - equal:
           path: metadata.namespace
@@ -130,7 +130,7 @@ tests:
         enabled: true
     capabilities:
       apiVersions:
-        - forecastle.stakater.com/v1alpha1
+        - forecastle.salt.com/v1alpha1
     asserts:
       - equal:
           path: spec.properties.key1

@@ -15,7 +15,7 @@ metadata:
 {{ toYaml .Values.deployment.annotations | indent 4 }}
 {{- end }}
 {{- if .Values.deployment.reloadOnChange }}
-    reloader.stakater.com/auto: "true"
+    reloader.salt.com/auto: "true"
 {{- end }}
   name: {{ template "application.name" . }}
   namespace: {{ include "application.namespace" . }}
@@ -37,7 +37,7 @@ spec:
     metadata:
       labels:
       {{- include "application.labels" . | nindent 8 }}
-        application.stakater.com/workload-class: serving
+        application.salt.com/workload-class: serving
 {{- if .Values.deployment.podLabels }}
 {{ toYaml .Values.deployment.podLabels | indent 8 }}
 {{- end }}

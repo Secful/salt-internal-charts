@@ -263,13 +263,13 @@ service:
     key: value
     expose: "true"
   annotations:
-    config.xposer.stakater.com/Domain: stakater.com
-    config.xposer.stakater.com/IngressNameTemplate: '{{ "{{.Service}}-{{.Namespace}}" }}'
-    config.xposer.stakater.com/IngressURLPath: /
-    config.xposer.stakater.com/IngressURLTemplate: '{{ "{{.Service}}.{{.Namespace}}.{{.Domain}}" }}'
+    config.xposer.salt.com/Domain: salt.com
+    config.xposer.salt.com/IngressNameTemplate: '{{ "{{.Service}}-{{.Namespace}}" }}'
+    config.xposer.salt.com/IngressURLPath: /
+    config.xposer.salt.com/IngressURLTemplate: '{{ "{{.Service}}.{{.Namespace}}.{{.Domain}}" }}'
     service.alpha.openshift.io/serving-cert-secret-name: |
       '{{ template "application.name" . }}-tls'
-    xposer.stakater.com/annotations: |-
+    xposer.salt.com/annotations: |-
       kubernetes.io/ingress.class: external-ingress
       ingress.kubernetes.io/rewrite-target: /
       ingress.kubernetes.io/force-ssl-redirect: "true"
@@ -301,7 +301,7 @@ ingress:
       #  pathType: ''
       #  serviceName: ''
       #  servicePort: ''
-    - host: '{{ .Release.Name }}.stakater.com'
+    - host: '{{ .Release.Name }}.salt.com'
       paths:
       - path: /
 
@@ -321,7 +321,7 @@ ingress:
     - secretName: chart-example-tls
       hosts:
         - chart-example.local
-        - '{{ .Release.Name }}.stakater.com'
+        - '{{ .Release.Name }}.salt.com'
 
 # Route object for exposing services (OpenShift only)
 route:
@@ -387,7 +387,7 @@ forecastle:
     key: value
 
   # URL of the icon for the custom app
-  icon: https://raw.githubusercontent.com/stakater/ForecastleIcons/master/stakater-big.png
+  icon: https://raw.githubusercontent.com/salt/ForecastleIcons/master/salt-big.png
 
   # Name of the application to be displayed on the Forecastle Dashboard
   displayName: "application"
@@ -557,7 +557,7 @@ vpa:
         cpu: 1
         memory: 5Gi
 
-# EndpointMonitor for IMC (https://github.com/stakater/IngressMonitorController)
+# EndpointMonitor for IMC (https://github.com/salt/IngressMonitorController)
 endpointMonitor:
   enabled: true
 
@@ -586,7 +586,7 @@ certificate:
   renewBefore: 720h0m0s # 30d
   subject:
   #  organizations:
-  #    - stakater
+  #    - salt
   #  countries:
   #    - SE
   #  organizationalUnits:
@@ -670,7 +670,7 @@ prometheusRule:
 
   # PrometheusRule labels
   additionalLabels:
-    prometheus: stakater-workload-monitoring
+    prometheus: salt-workload-monitoring
     role: alert-rules
 
   # Groups with alerting rules. Read more here [https://docs.openshift.com/container-platform/4.7/rest_api/monitoring_apis/prometheusrule-monitoring-coreos-com-v1.html]
