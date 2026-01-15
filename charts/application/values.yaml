@@ -1246,43 +1246,6 @@ pdb:
   maxUnavailable:
   # maxUnavailable: 1
 
-grafanaDashboard:
-  # -- (bool) Deploy [GrafanaDashboard](https://github.com/grafana/grafana-operator) resources.
-  # @section -- GrafanaDashboard Parameters
-  enabled: false
-  # -- (object) Additional labels for GrafanaDashboard.
-  # @section -- GrafanaDashboard Parameters
-  additionalLabels:
-    # grafanaDashboard: grafana-operator
-  # -- (object) Annotations for GrafanaDashboard.
-  # @section -- GrafanaDashboard Parameters
-  annotations:
-    # key: value
-  # -- (object) List of GrafanaDashboard entries.
-  # Key will be used as a name suffix for the GrafanaDashboard. Value is the GrafanaDashboard content.
-  # According to GrafanaDashboard behavior, `url` field takes precedence on the `json` field.
-  # @section -- GrafanaDashboard Parameters
-  contents:
-    # dashboard-name-1:
-    #   json: |-
-    #     {
-    #       "data"
-    #     }
-    # dashboard-name-2:
-    #   url: http://hostname/path/to/file.json
-    # dashboard-test-name-2:
-    #   allowCrossNamespaceImport: true
-    #   configMapRef:
-    #     key: json
-    #     name: storage-observability-definition
-    #   datasources:
-    #     - datasourceName: Test
-    #       inputName: DS_PROMETHEUS
-    #   folder: Storage Observability
-    #   instanceSelector:
-    #     matchLabels:
-    #       app: test-2
-
 backup:
   # -- (bool) Deploy a [Velero/OADP Backup](https://velero.io/docs/main/api-types/backup/) resource.
   # @section -- Backup Parameters
@@ -1294,7 +1257,7 @@ backup:
   # -- (object) Additional labels for Backup.
   # @section -- Backup Parameters
   additionalLabels:
-    # grafanaDashboard: grafana-operator
+    # key: value
   # -- (object) Annotations for Backup.
   # @section -- Backup Parameters
   annotations:
