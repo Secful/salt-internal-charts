@@ -108,11 +108,8 @@ tests:
           path: metadata.labels["example.com/owner"]
           value: example-owner
       - equal:
-          path: metadata.labels["group"]
-          value: com.stakater.platform
-      - equal:
           path: metadata.labels["team"]
-          value: stakater
+          value: salt
       - equal:
           path: metadata.labels["tpl-key"]
           value: tpl-value
