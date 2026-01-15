@@ -21,12 +21,12 @@ capabilities:
     - bitnami.com/v1alpha1/SealedSecret
     - cert-manager.io/v1
     - cert-manager.io/v1/Certificate
-    - endpointmonitor.stakater.com/v1alpha1
-    - endpointmonitor.stakater.com/v1alpha1/EndpointMonitor
+    - endpointmonitor.salt.com/v1alpha1
+    - endpointmonitor.salt.com/v1alpha1/EndpointMonitor
     - external-secrets.io/v1
     - external-secrets.io/v1/ExternalSecret
-    - forecastle.stakater.com/v1alpha1
-    - forecastle.stakater.com/v1alpha1/ForecastleApp
+    - forecastle.salt.com/v1alpha1
+    - forecastle.salt.com/v1alpha1/ForecastleApp
     - grafana.integreatly.org/v1beta1
     - monitoring.coreos.com/v1
     - monitoring.coreos.com/v1/ServiceMonitor

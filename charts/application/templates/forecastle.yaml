@@ -1,6 +1,6 @@
-{{- if and (.Values.forecastle).enabled (.Capabilities.APIVersions.Has "forecastle.stakater.com/v1alpha1") (or .Values.ingress.enabled .Values.route.enabled) }}
+{{- if and (.Values.forecastle).enabled (.Capabilities.APIVersions.Has "forecastle.salt.com/v1alpha1") (or .Values.ingress.enabled .Values.route.enabled) }}
 ---
-apiVersion: forecastle.stakater.com/v1alpha1
+apiVersion: forecastle.salt.com/v1alpha1
 kind: ForecastleApp
 metadata:
   name: {{ template "application.name" . }}

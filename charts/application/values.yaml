@@ -169,7 +169,7 @@ deployment:
     #   imagePullPolicy: IfNotPresent
     #   command: ['/bin/sh']
   # -- (object) Configuration details for fluentdConfigurations.
-  # Only works for specific setup, see <https://medium.com/stakater/dynamic-log-processing-with-fluentd-konfigurator-and-slack-935a5de4eddb>.
+  # Only works for specific setup, see <https://medium.com/salt/dynamic-log-processing-with-fluentd-konfigurator-and-slack-935a5de4eddb>.
   # @section -- Deployment Parameters
   fluentdConfigAnnotations:
     # regex: hello
@@ -527,13 +527,13 @@ service:
   # -- (object) Annotations for service.
   # @section -- Service Parameters
   annotations:
-    # config.xposer.stakater.com/Domain: stakater.com
-    # config.xposer.stakater.com/IngressNameTemplate: '{{ "{{.Service}}-{{.Namespace}}" }}'
-    # config.xposer.stakater.com/IngressURLPath: /
-    # config.xposer.stakater.com/IngressURLTemplate: '{{ "{{.Service}}.{{.Namespace}}.{{.Domain}}" }}'
+    # config.xposer.salt.com/Domain: salt.com
+    # config.xposer.salt.com/IngressNameTemplate: '{{ "{{.Service}}-{{.Namespace}}" }}'
+    # config.xposer.salt.com/IngressURLPath: /
+    # config.xposer.salt.com/IngressURLTemplate: '{{ "{{.Service}}.{{.Namespace}}.{{.Domain}}" }}'
     # service.alpha.openshift.io/serving-cert-secret-name: |
     #   '{{ template "application.name" . }}-tls'
-    # xposer.stakater.com/annotations: |-
+    # xposer.salt.com/annotations: |-
     #   kubernetes.io/ingress.class: external-ingress
     #   ingress.kubernetes.io/rewrite-target: /
     #   ingress.kubernetes.io/force-ssl-redirect: true
@@ -724,7 +724,7 @@ secretProviderClass:
     #   type: Opaque
 
 forecastle:
-  # -- (bool) Deploy a [ForecastleApp](https://github.com/stakater/Forecastle) resource.
+  # -- (bool) Deploy a [ForecastleApp](https://github.com/salt/Forecastle) resource.
   # @section -- ForecastleApp Parameters
   enabled: false
   # -- (object) Additional labels for ForecastleApp.
@@ -732,7 +732,7 @@ forecastle:
   additionalLabels:
   # -- (string) Icon URL.
   # @section -- ForecastleApp Parameters
-  icon: https://raw.githubusercontent.com/stakater/ForecastleIcons/master/stakater-big.png
+  icon: https://raw.githubusercontent.com/salt/ForecastleIcons/master/salt-big.png
   # -- (string) Application Name.
   # Required if `forecastle.enabled` is set to `true`.
   # @section -- ForecastleApp Parameters
@@ -951,7 +951,7 @@ vpa:
     updateMode: Auto
 
 endpointMonitor:
-  # -- (bool) Deploy an [IMC EndpointMonitor](https://github.com/stakater/IngressMonitorController) resource.
+  # -- (bool) Deploy an [IMC EndpointMonitor](https://github.com/salt/IngressMonitorController) resource.
   # @section -- EndpointMonitor Parameters
   enabled: false
   # -- (object) Additional labels for EndpointMonitor.
@@ -988,7 +988,7 @@ certificate:
   # @section -- cert-manager Certificate Parameters
   subject:
   #  organizations:
-  #    - stakater
+  #    - salt
   #  countries:
   #    - SE
   #  organizationalUnits:
@@ -1129,7 +1129,7 @@ prometheusRule:
   # -- (object) Additional labels for PrometheusRule.
   # @section -- PrometheusRule Parameters
   additionalLabels:
-    # prometheus: stakater-workload-monitoring
+    # prometheus: salt-workload-monitoring
     # role: alert-rules
   # -- (list) Groups with alerting rules.
   # Read more about it at [https://docs.openshift.com/container-platform/4.7/rest_api/monitoring_apis/prometheusrule-monitoring-coreos-com-v1.html](OpenShift's PrometheusRule documentation).
@@ -1188,7 +1188,7 @@ externalSecret:
     #   secretStore:
     #      name: secret-store-name-2
     #   labels:
-    #      stakater.com/app: mongodb
+    #      salt.com/app: mongodb
     #   annotations:
     #      key: value
     # postgres:

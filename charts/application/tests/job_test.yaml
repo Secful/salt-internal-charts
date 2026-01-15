@@ -239,7 +239,7 @@ tests:
           path: spec.template.metadata.labels["app.kubernetes.io/name"]
           value: my-app
 
-  - it: includes application.stakater.com/workload-class label with value batch in pod template
+  - it: includes application.salt.com/workload-class label with value batch in pod template
     set:
       job:
         enabled: true
@@ -251,7 +251,7 @@ tests:
       applicationName: my-app
     asserts:
       - equal:
-          path: spec.template.metadata.labels["application.stakater.com/workload-class"]
+          path: spec.template.metadata.labels["application.salt.com/workload-class"]
           value: batch
 
   - it: uses image templating
