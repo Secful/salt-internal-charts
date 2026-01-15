@@ -28,7 +28,6 @@ capabilities:
     - forecastle.stakater.com/v1alpha1
     - forecastle.stakater.com/v1alpha1/ForecastleApp
     - grafana.integreatly.org/v1beta1
-    - grafana.integreatly.org/v1beta1/GrafanaDashboard
     - monitoring.coreos.com/v1
     - monitoring.coreos.com/v1/ServiceMonitor
     - monitoring.coreos.com/v1/PrometheusRule
